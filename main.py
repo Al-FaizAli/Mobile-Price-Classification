@@ -8,23 +8,11 @@ classifier = pickle.load(pickle_in)
 
 # defining the function which will make the prediction using
 # the data which the user inputs
-def prediction(
-    battery_power, blue, clock_speed, dual_sim, fc, four_g, int_memory,
-    m_dep, mobile_wt, n_cores, pc, px_height, px_width, ram,
-    sc_h, sc_w, talk_time, three_g, touch_screen, wifi
-):
-    inputs = [
-        [
-            int(battery_power), int(blue), float(clock_speed), int(dual_sim),
-            int(fc), int(four_g), int(int_memory), float(m_dep), int(mobile_wt),
-            int(n_cores), int(pc), int(px_height), int(px_width), int(ram),
-            int(sc_h), int(sc_w), int(talk_time), int(three_g),
-            int(touch_screen), int(wifi)
-        ]
-    ]
-    prediction = classifier.predict(inputs)
+def prediction(battery_power,blue,clock_speed,dual_sim,fc,four_g,int_memory,m_dep,mobile_wt,n_cores,pc,px_height,px_width,ram,sc_h,sc_w,talk_time,three_g,touch_screen,wifi):
+    prediction = classifier.predict(
+        [[battery_power,blue,clock_speed,dual_sim,fc,four_g,int_memory,m_dep,mobile_wt,n_cores,pc,px_height,px_width,ram,sc_h,sc_w,talk_time,three_g,touch_screen,wifi]])
+    print(prediction)
     return prediction
-
 
 
 # this is the main function in which we define our webpage
