@@ -1,3 +1,4 @@
+pip install --upgrade pip setuptools wheel
 numpy>=1.11.0
 scipy>=0.17.0
 scikit-learn==0.22.2.post1
